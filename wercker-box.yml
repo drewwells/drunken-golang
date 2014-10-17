@@ -78,6 +78,7 @@ script: |
 
     # Make actual go workspace dir structure
     mkdir -p "$HOME/go/{src,pkg,bin}"
+    source /etc/profile
     go version
 
 box-detect:
