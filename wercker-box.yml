@@ -43,6 +43,7 @@ script: |
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
     sudo add-apt-repository -y 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main'
     wget -q -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -
+    # Add updated G++
     sudo add-apt-repository -y ppa:asolovets/backports
     sudo apt-get update
     sudo apt-get install binfmt-support build-essential binutils -y
