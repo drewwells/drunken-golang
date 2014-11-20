@@ -75,8 +75,8 @@ script: |
     echo 'export GOPATH="$HOME/go"' | sudo tee -a /etc/profile
 
     # Adds go bin directory to path so tools
-    # and buils are available on the commandline
-    export PATH="$PATH:$GOPATH/bin"
+    # and builds are available on the commandline
+    export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
     echo 'export PATH="$PATH:$GOPATH/bin"' | sudo tee -a /etc/profile
 
     # Make actual go workspace dir structure
