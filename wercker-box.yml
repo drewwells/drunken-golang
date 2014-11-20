@@ -83,8 +83,8 @@ script: |
     mkdir -p "$HOME/go/{src,pkg,bin}"
 
     # build cross compiling support
-    go get -u -v github.com/laher/goxc
-    go get -u -v github.com/tools/godep
+    PATH=$GOPATH/bin:$PATH go get -u -v github.com/laher/goxc
+    PATH=$GOPATH/bin:$PATH go get -u -v github.com/tools/godep
     sudo -E env PATH=$GOPATH/bin:$PATH goxc -t
 box-detect:
   priority : 900
