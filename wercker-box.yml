@@ -72,20 +72,16 @@ script: |
 
     # Set GOPATH
     export GOPATH="$HOME/go"
-    echo 'export GOPATH="$HOME/go"' | sudo tee -a /etc/profile
-
-    # Adds go bin directory to path so tools
-    # and builds are available on the commandline
-    export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
-    echo 'export PATH="$PATH:$GOPATH/bin"' | sudo tee -a /etc/profile
+    cat .profile >> $HOME/.bash_profile
+    source .profile
 
     # Make actual go workspace dir structure
     mkdir -p "$HOME/go/{src,pkg,bin}"
 
     # build cross compiling support
-    PATH=$GOPATH/bin:$PATH go get -u -v github.com/laher/goxc
-    PATH=$GOPATH/bin:$PATH go get -u -v github.com/tools/godep
-    sudo -E env PATH=$GOPATH/bin:$PATH goxc -t
+    go get -u -v github.com/laher/goxc
+    go get -u -v github.com/tools/godep
+    sudo goxc -t
 box-detect:
   priority : 900
   version :
