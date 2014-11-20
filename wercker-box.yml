@@ -13,7 +13,7 @@ keywords:
     - Autotools
     - golang
     - go
-    - cross compile
+    - goxc
 
 packages:
     - build-essentials
@@ -39,8 +39,7 @@ packages:
 
 script: |
     set -e
-    set -x
-    sudo apt-get purge -y --auto-remove make gcc g++ automake autoconf
+    #sudo apt-get purge -y --auto-remove make gcc g++ automake autoconf
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
     sudo add-apt-repository -y 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main'
     wget -q -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -
