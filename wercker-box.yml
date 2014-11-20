@@ -79,7 +79,7 @@ script: |
     # build cross compiling support
     go get -u -v github.com/laher/goxc
     go get -u -v github.com/tools/godep
-    sudo goxc -t
+    goxc -t
 box-detect:
   priority : 900
   version :
