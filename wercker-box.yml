@@ -1,5 +1,5 @@
 name: drunken-golang
-version: 0.0.0
+version: 0.1.0
 inherits: wercker/default@0.0.2
 type: main
 platform: ubuntu@12.04
