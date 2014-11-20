@@ -11,6 +11,9 @@ keywords:
     - C11
     - C++11
     - Autotools
+    - golang
+    - go
+    - cross compile
 
 packages:
     - build-essentials
@@ -78,8 +81,11 @@ script: |
 
     # Make actual go workspace dir structure
     mkdir -p "$HOME/go/{src,pkg,bin}"
-    /usr/local/go/bin/go version
 
+    # build cross compiling support
+    go get -u -v github.com/laher/goxc
+    go get -u -v github.com/tools/godep
+    sudo -E env PATH=$GOPATH/bin:$PATH goxc -t
 box-detect:
   priority : 900
   version :
