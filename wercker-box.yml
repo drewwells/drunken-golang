@@ -75,9 +75,6 @@ script: |
     cat .profile >> $HOME/.bash_profile
     source .profile
     echo $PATH
-    which -a go
-    # Make actual go workspace dir structure
-    mkdir -p "$HOME/go/{src,pkg,bin}"
 
     # build cross compiling support
     go get -u -v github.com/laher/goxc
